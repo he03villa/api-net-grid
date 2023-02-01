@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,6 @@ Route::get('/', function () {
 
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('config:cache');
+    dd($exitCode);
     return 'DONE'; //Return anything
 });
